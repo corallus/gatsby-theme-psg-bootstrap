@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import {Helmet} from 'react-helmet'
-import Context from "../../Events/Context";
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import {ticketParams} from "../../../params";
 
 const Tickets = () => {

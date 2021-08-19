@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaFacebook, FaInstagram} from 'react-icons/fa';
 import {IconContext} from "react-icons"
-import useSiteMetadata from './SiteMetadata';
+import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
 
 const Social = () => {
     const {social} = useSiteMetadata()

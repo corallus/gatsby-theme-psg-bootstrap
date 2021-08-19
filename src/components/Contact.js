@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
-import HTMLContent from 'gatsby-theme-psg/src/components/Content'
+import HTMLContent from './Content'
 import { ResponseForm } from "./Form";
 
 export default () => {

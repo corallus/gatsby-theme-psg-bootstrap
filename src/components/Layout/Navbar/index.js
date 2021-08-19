@@ -2,9 +2,9 @@ import React, {useContext, useEffect, useState} from "react"
 import {Link} from "gatsby"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Context from '../../Events/Context';
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import SocialMenu from "../../Social"
-import useSiteMetadata from "../../SiteMetadata";
+import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
 import Logo from "./Logo";
 import './style.scss'
 import EventToggler from "./Toggler";

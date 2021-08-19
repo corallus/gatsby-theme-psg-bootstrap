@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import Context from '../../../Events/Context';
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import {Dropdown} from 'react-bootstrap';
 import Button from './Button'
 import Item from './Item'
@@ -13,7 +13,7 @@ export default () => {
         <Dropdown className="event-selector">
             <Button event={event} id="dropdown-basic" className={"py-0"}/>
             <Dropdown.Menu>
-                {events.map(({node: post}) => (
+                {events.map((post) => (
                     <Item event={post} key={post.id}/>
                 ))
                 }

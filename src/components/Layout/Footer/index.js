@@ -1,6 +1,6 @@
 import React from 'react'
 import SocialMenu from '../../Social'
-import useSiteMetadata from '../../SiteMetadata'
+import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
 import Logo from './Logo'
 import './style.scss'
 import {PrimaryMenu} from '../Navbar/index'

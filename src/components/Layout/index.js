@@ -2,14 +2,14 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 import Footer from './Footer/index'
 import Navbar from './Navbar/index'
-import useSiteMetadata from '../SiteMetadata'
+import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
 import CookieConsent from "react-cookie-consent"
 import {globalHistory} from "@reach/router"
 import './style.scss'
 import '../../theme.scss'
-import {EventProvider} from '../Events/Context'
+import {EventProvider} from 'gatsby-theme-psg/src/components/Events/Context'
 import NewsFlash from "./NewsFlash";
-import EventMeta from "./EventMeta";
+import EventMeta from "gatsby-theme-psg/src/components/EventMeta";
 
 const Layout = ({title: pageTitle = null, description, template = null, children}) => {
     const {title} = useSiteMetadata()

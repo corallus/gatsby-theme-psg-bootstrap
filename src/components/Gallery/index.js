@@ -1,7 +1,7 @@
 import React from 'react'
 import {Carousel} from 'react-bootstrap'
 import Lightbox from 'react-image-lightbox'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import 'react-image-lightbox/style.css'
 import './style.scss'
 import Col from "react-bootstrap/Col";
@@ -46,49 +46,49 @@ class Index extends React.Component {
             let page = this.props.images.slice(indexOfFirstImage, indexOfLastImage);
             pages.push(page);
         }
-        return (
-            <>
-                {isOpen && (
-                    <Lightbox
-                        mainSrc={images[imageIndex].image.childImageSharp.fluid.src}
-                        nextSrc={images[(imageIndex + 1) % images.length].image.childImageSharp.fluid.src}
-                        prevSrc={images[(imageIndex + images.length - 1) % images.length].image.childImageSharp.fluid.src}
-                        onCloseRequest={() => this.setState({isOpen: false})}
-                        onMovePrevRequest={() =>
-                            this.setState({
-                                imageIndex: (imageIndex + images.length - 1) % images.length,
-                            })
-                        }
-                        onMoveNextRequest={() =>
-                            this.setState({
-                                imageIndex: (imageIndex + 1) % images.length,
-                            })
-                        }
-                    />
-                )}
-                <Carousel
-                    activeIndex={page}
-                    dir={direction}
-                    onSelect={this.handleSelect}
-                    interval={null}
-                >
+        return <>
+            {isOpen && (
+                <Lightbox
+                    mainSrc={images[imageIndex].image.childImageSharp.gatsbyImageData.src}
+                    nextSrc={images[(imageIndex + 1) % images.length].image.childImageSharp.gatsbyImageData.src}
+                    prevSrc={images[(imageIndex + images.length - 1) % images.length].image.childImageSharp.gatsbyImageData.src}
+                    onCloseRequest={() => this.setState({isOpen: false})}
+                    onMovePrevRequest={() =>
+                        this.setState({
+                            imageIndex: (imageIndex + images.length - 1) % images.length,
+                        })
+                    }
+                    onMoveNextRequest={() =>
+                        this.setState({
+                            imageIndex: (imageIndex + 1) % images.length,
+                        })
+                    }
+                />
+            )}
+            <Carousel
+                activeIndex={page}
+                dir={direction}
+                onSelect={this.handleSelect}
+                interval={null}
+            >
 
-                    {pages.map((page, i) => (
-                        <Carousel.Item key={i}>
-                            <Row>
-                                {page.map((image, j) => (
-                                    <Col {...galleryParams.colProps} key={j} onClick={() => this.handleOpen(j)}
-                                         style={{padding: '15px'}}>
-                                        <Img className="rounded" fluid={image.image.childImageSharp.fluid}
-                                             alt={image.alt}/>
-                                    </Col>
-                                ))}
-                            </Row>
-                        </Carousel.Item>
-                    ))}
-                </Carousel>
-            </>
-        );
+                {pages.map((page, i) => (
+                    <Carousel.Item key={i}>
+                        <Row>
+                            {page.map((image, j) => (
+                                <Col {...galleryParams.colProps} key={j} onClick={() => this.handleOpen(j)}
+                                     style={{padding: '15px'}}>
+                                    <GatsbyImage
+                                        image={image.image.childImageSharp.gatsbyImageData}
+                                        className="rounded"
+                                        alt={image.alt} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </Carousel.Item>
+                ))}
+            </Carousel>
+        </>;
     }
 }
 

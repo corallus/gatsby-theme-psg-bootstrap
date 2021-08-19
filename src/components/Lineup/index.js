@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import Context from '../Events/Context'
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import {Button, Nav, Tab} from 'react-bootstrap'
 import Stage from './Stage'
 import './style.scss'

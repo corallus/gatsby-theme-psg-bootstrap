@@ -7,7 +7,7 @@ import axios from 'axios'
 import FieldWrapper from './FieldWrapper'
 import { Helmet } from 'react-helmet';
 import './style.css'
-import useSiteMetadata from "../SiteMetadata";
+import useSiteMetadata from "gatsby-theme-psg/src/components/SiteMetadata";
 
 const TextAreaField = (props) => {
     return (

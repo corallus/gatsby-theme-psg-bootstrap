@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Accordion} from 'react-bootstrap'
 import Topic from './Topic'
-import Context from '../Events/Context';
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import './style.scss'
 
 export default ({category}) => {
