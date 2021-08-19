@@ -1,0 +1,17 @@
+.ReactModal__Overlay--after-open {
+  z-index: 1040 !important;
+}
+
+.ril__toolbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@include media-breakpoint-up(md) {
+  .carousel-control-prev {
+    left: -15%;
+  }
+
+  .carousel-control-next {
+    right: -15%;
+  }
+}

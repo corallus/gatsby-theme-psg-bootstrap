@@ -1,0 +1,133 @@
+.navbar {
+  > .d-flex {
+    min-height: $logo-height;
+
+    :first-child {
+      position: relative;
+      z-index: 1051;
+    }
+
+    > div {
+      flex: 1 1 0
+    }
+  }
+
+  .secondary-menu {
+    li {
+      .nav-link {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .btn-link {
+    color: $navbar-dark-color;
+  }
+
+  .navbar-brand {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+  }
+
+  &.navbar-expanded {
+    .navbar-toggler {
+      color: $navbar-collapse-color !important;
+
+      .icon-bar {
+        background-color: $navbar-collapse-color !important;
+      }
+
+      .top-bar {
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+      }
+
+      .middle-bar {
+        opacity: 0;
+      }
+
+      .bottom-bar {
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: 0;
+    padding-left: 0;
+    // http://kylegoslan.co.uk/bootstrap-4-hamburger-menu-animation/
+    .icon-bar {
+      width: 27px;
+      height: 3px;
+      display: block;
+      transition: all 0.2s;
+      margin-top: 5px;
+      background-color: $navbar-dark-color;
+    }
+
+    .top-bar {
+      margin-top: 0;
+      transform: rotate(0);
+    }
+
+    .middle-bar {
+      opacity: 1;
+    }
+
+    .bottom-bar {
+      transform: rotate(0);
+    }
+  }
+
+  &.navbar-light {
+    .btn-link {
+      color: $navbar-light-color;
+    }
+
+    .icon-bar {
+      background-color: $navbar-light-color !important;
+    }
+  }
+
+  .navbar-collapse {
+    background-color: $navbar-collapse-bg;
+    font-family: $menu-font-family;
+    text-align: left;
+    padding: 1rem;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-top: $logo-height + 2 * $navbar-padding-y;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      width: 100%;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 100vh !important;
+      min-width: 350px;
+    }
+
+    .nav-link {
+      color: $navbar-collapse-color !important;
+
+      &:hover {
+        color: $navbar-collapse-hover-color !important;
+      }
+
+      &.active {
+        color: $navbar-collapse-active-color !important;
+      }
+    }
+
+    .secondary-menu li:last-child {
+      float: none;
+      display: block
+    }
+  }
+}
+

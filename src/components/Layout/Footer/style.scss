@@ -1,0 +1,40 @@
+.footer {
+  width: 100%;
+  color: $footer-color;
+
+  .social-link {
+    padding: 0 8px;
+  }
+
+  a {
+    color: $footer-color !important;
+  }
+
+  .main-menu {
+    font-size: 1.5rem;
+    text-transform: uppercase
+  }
+
+  @include media-breakpoint-up(md) {
+    ul.main-menu li a {
+      list-style: none;
+      display: inline;
+      padding: 0
+    }
+    ul.main-menu li:after {
+      content: "•";
+      color: rgba($color: #fff, $alpha: .5);
+      padding: 0 15px
+    }
+    ul.main-menu li:last-child:after {
+      content: none;
+    }
+    ul.main-menu li:first-child a {
+      padding-left: 0
+    }
+  }
+
+  .text-muted {
+    color: rgba($color: #fff, $alpha: .5) !important;
+  }
+}

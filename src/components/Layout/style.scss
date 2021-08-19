@@ -1,0 +1,11 @@
+@include media-breakpoint-up(lg) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  .footer {
+    position: relative;
+    bottom: 0;
+  }
+}
