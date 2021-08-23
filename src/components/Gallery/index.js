@@ -49,9 +49,9 @@ class Index extends React.Component {
         return <>
             {isOpen && (
                 <Lightbox
-                    mainSrc={images[imageIndex].image.childImageSharp.gatsbyImageData.src}
-                    nextSrc={images[(imageIndex + 1) % images.length].image.childImageSharp.gatsbyImageData.src}
-                    prevSrc={images[(imageIndex + images.length - 1) % images.length].image.childImageSharp.gatsbyImageData.src}
+                    mainSrc={images[imageIndex].image.childImageSharp.original.src}
+                    nextSrc={images[(imageIndex + 1) % images.length].image.childImageSharp.original.src}
+                    prevSrc={images[(imageIndex + images.length - 1) % images.length].image.childImageSharp.original.src}
                     onCloseRequest={() => this.setState({isOpen: false})}
                     onMovePrevRequest={() =>
                         this.setState({

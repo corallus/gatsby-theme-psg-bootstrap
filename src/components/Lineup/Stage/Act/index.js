@@ -6,13 +6,16 @@ import {lineupParams} from "../../../../params";
 
 const Act = ({act}) => {
     const artist = act.artist
+
+    const image = act.image?.childImageSharp.gatsbyImageData || act.artist.frontmatter.image.childImageSharp.gatsbyImageData
+
     return (
         <Card {...lineupParams.artist.cardProps}>
             {act.announced && artist.frontmatter.image
                 ?
                 <Card.Img
                     as={GatsbyImage}
-                    fluid={artist.frontmatter.image.childImageSharp.gatsbyImageData}
+                    image={image}
                     alt={artist.frontmatter.title}
                 />
                 :

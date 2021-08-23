@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className="container text-center text-md-left">
                     <div className="row">
                         <div className="col-auto mx-auto mx-lg-0 pl-0">
-                            <Logo/>
+                            <Logo title={title} />
                         </div>
                         <div className="col-12 col-lg-9 d-flex align-content-end px-4 flex-wrap">
                             <div className="navigation mb-2 w-100 d-md-flex justify-content-between">
