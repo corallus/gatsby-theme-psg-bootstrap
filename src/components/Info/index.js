@@ -25,7 +25,7 @@ export default ({category}) => {
     const {edges: events} = data.allMarkdownRemark
     const {state} = useContext(Context)
     const {event} = state
-    const posts = events.filter(post => !post.node.frontmatter.events || (post.node.frontmatter.events.filter(ev => ev.id === event.id).length))
+    const posts = events.filter(post => !post.node.frontmatter.events || (post.node.frontmatter.events.filter(ev => ev?.id === event.id).length))
 
     const [activeKey, setActiveKey] = useState(null)
 

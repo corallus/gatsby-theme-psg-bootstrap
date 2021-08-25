@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import Context from '../Events/Context'
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import Ticket from './Ticket'
 import moment from 'moment'
 import {Col, Row} from 'react-bootstrap'

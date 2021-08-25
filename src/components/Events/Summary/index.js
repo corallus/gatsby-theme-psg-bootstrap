@@ -1,11 +1,11 @@
 import React from 'react'
 import Content from "../../Content";
 import Button from "./Button";
-import Context from '../Context'
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import './style.scss'
 import {Link} from "gatsby";
 import {summaryParams} from "../../../params";
-import EventContainer from "gatsby-theme-psg/src/components/Events/Switcher";
+import EventContainer from "../Switcher";
 
 const Summary = () => {
     return (
