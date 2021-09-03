@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
-    "gatsby-theme-psg": "corallus/gatsby-theme-psg#4.0.3",
+    "gatsby-theme-psg": "corallus/gatsby-theme-psg#4.0.4",
     "bootstrap-scss": "^4.6.0",
     "gatsby-plugin-sass": "^4.12.0",
     "react-bootstrap": "^1.4.3",
