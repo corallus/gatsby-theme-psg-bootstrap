@@ -2,25 +2,26 @@ import React, {useContext, useEffect, useState} from "react"
 import {Link} from "gatsby"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Context from 'gatsby-theme-psg/src/components/Events/Context'
-import SocialMenu from "../../Social"
+
 import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
+import Context from 'gatsby-theme-psg/src/components/Events/Context'
+
+import SocialMenu from "../../Social"
 import Logo from "./Logo";
-import './style.scss'
 import EventToggler from "./Toggler";
 import TicketButton from './Tickets'
 
+import './style.scss'
+
 const Toggler = () => {
-    return (
-        <>
+    return <>
       <span className="mr-2 d-inline-block align-middle bar">
         <span className="icon-bar top-bar"/>
         <span className="icon-bar middle-bar"/>
         <span className="icon-bar bottom-bar"/>
       </span>
-            <span className="d-none d-md-inline">MENU</span>
-        </>
-    )
+        <span className="d-none d-md-inline">MENU</span>
+    </>
 }
 
 const SecondaryMenu = () => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import { GatsbyImage } from "gatsby-plugin-image";
-import {graphql} from 'gatsby'
 import {Card} from 'react-bootstrap';
 import {lineupParams} from "../../../../params";
 
@@ -34,20 +33,5 @@ const Act = ({act}) => {
         </Card>
     );
 }
-
-export const query = graphql`fragment Artist on MarkdownRemark {
-  id
-  html
-  frontmatter {
-    title
-    templateKey
-    image {
-      childImageSharp {
-        gatsbyImageData(width: 800, height: 600, quality: 100, layout: CONSTRAINED)
-      }
-    }
-  }
-}
-`
 
 export default Act

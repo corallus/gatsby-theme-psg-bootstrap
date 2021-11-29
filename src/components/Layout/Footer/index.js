@@ -1,9 +1,13 @@
 import React from 'react'
-import SocialMenu from '../../Social'
+
 import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
+import privacyStatement from 'gatsby-theme-psg/src/assets/privacy-statement.pdf'
+import algemeneVoorwaarden from 'gatsby-theme-psg/src/assets/algemenevoorwaarden.pdf'
+
+import SocialMenu from '../../Social'
+import {PrimaryMenu} from '../Navbar/index'
 import Logo from './Logo'
 import './style.scss'
-import {PrimaryMenu} from '../Navbar/index'
 
 const Footer = () => {
     const {title} = useSiteMetadata()
@@ -26,9 +30,9 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <p className="text-xs mb-0">
-                                <small>© Copyright {year}, All Rights Reserved. <a href="/algemenevoorwaarden.pdf">General
+                                <small>© Copyright {year}, All Rights Reserved. <a href={algemeneVoorwaarden}>General
                                     Conditions of {title}</a> apply to this event</small> | <small><a
-                                href="/privacy-statement.pdf">Privacy statement</a></small>
+                                href={privacyStatement}>Privacy statement</a></small>
                             </p>
                         </div>
                     </div>
