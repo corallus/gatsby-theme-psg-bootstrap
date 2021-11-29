@@ -1,15 +1,20 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
-import Footer from './Footer/index'
-import Navbar from './Navbar/index'
-import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
 import CookieConsent from "react-cookie-consent"
 import {globalHistory} from "@reach/router"
+
+import useSiteMetadata from 'gatsby-theme-psg/src/components/SiteMetadata'
+import {EventProvider} from 'gatsby-theme-psg/src/components/Events/Context'
+import EventMeta from "gatsby-theme-psg/src/components/EventMeta";
+import cookiePolicy from 'gatsby-theme-psg/src/assets/cookie-policy.pdf'
+
+import Footer from './Footer/index'
+import Navbar from './Navbar/index'
+
 import './style.scss'
 import '../../theme.scss'
-import {EventProvider} from 'gatsby-theme-psg/src/components/Events/Context'
+
 import NewsFlash from "./NewsFlash";
-import EventMeta from "gatsby-theme-psg/src/components/EventMeta";
 
 const Layout = ({title: pageTitle = null, description, template = null, children}) => {
     const {title} = useSiteMetadata()
@@ -48,7 +53,7 @@ const Layout = ({title: pageTitle = null, description, template = null, children
                 style={{background: "#2B373B", textAlign: "right"}}
                 expires={150}
             >
-                <small>Wij gebruiken cookies volgens onze <a href="/cookie-policy.pdf">Cookie Policy</a></small>
+                <small>Wij gebruiken cookies volgens onze <a href={cookiePolicy}>Cookie Policy</a></small>
             </CookieConsent>
         </>
     )
