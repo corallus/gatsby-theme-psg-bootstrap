@@ -46,18 +46,36 @@ export const PrimaryMenu = () => {
         <>
             {menuItems.map((item, i) => (
                 <Nav.Item as={"li"} key={i}>
-                    {item.external
-                        ?
-                        <Nav.Link as={"a"} href={item.link} rel="noopener noreferrer"
-                                  target="_blank">{item.name}</Nav.Link>
+                    {item.external ?
+                        <Nav.Link
+                            as={"a"}
+                            href={item.link}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            {item.name}
+                        </Nav.Link>
                         :
-                        <Nav.Link as={Link} to={item.link} activeClassName="active">{item.name}</Nav.Link>
+                        <Nav.Link
+                            eventKey={`${i}`}
+                            as={Link}
+                            to={item.link}
+                            activeClassName="active"
+                        >
+                            {item.name}
+                        </Nav.Link>
                     }
                 </Nav.Item>
             ))}
             {event.frontmatter.links && event.frontmatter.links.map((item, i) => (
                 <Nav.Item as={"li"} key={i}>
-                    <Nav.Link href={item.url} rel="noopener noreferrer" target="_blank">{item.name}</Nav.Link>
+                    <Nav.Link
+                        href={item.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        {item.name}
+                    </Nav.Link>
                 </Nav.Item>
             ))}
         </>
@@ -82,7 +100,6 @@ export default ({isHome = false}) => {
 
     const [scroll, setScroll] = useState(false);
     const [showLogo, setShowLogo] = useState(false);
-    const [collapsed, setCollapsed] = useState(true);
 
     useEffect(
         () => {
@@ -100,9 +117,7 @@ export default ({isHome = false}) => {
             variant={(scroll ? 'light' : 'dark')}
             fixed="top"
             expand={null}
-            className={(collapsed ? 'navbar-collapsed' : 'navbar-expanded')}
-            collapseOnSelect={true}
-            onToggle={() => setCollapsed(!collapsed)}
+            collapseOnSelect={false}
         >
             <div className="d-flex w-100 justify-content-between align-items-center">
                 <div className="d-flex align-items-center">

@@ -1,31 +1,13 @@
-import React, {useContext, useState} from 'react'
-import {graphql, useStaticQuery} from 'gatsby'
+import React, {useState} from 'react'
 import {Accordion} from 'react-bootstrap'
+
+import useInfo from "gatsby-theme-psg/src/components/Info/hook";
+
 import Topic from './Topic'
-import Context from 'gatsby-theme-psg/src/components/Events/Context'
 import './style.scss'
 
-export default ({category}) => {
-    const data = useStaticQuery(
-        graphql`
-            query TopicsQuery {
-                allMarkdownRemark(
-                    sort: { order: ASC, fields: [frontmatter___order] }
-                    filter: { frontmatter: { templateKey: { eq: "info" } } }
-                ) {
-                    edges {
-                        node {
-                            ...Topic
-                        }
-                    }
-                }
-            }
-        `
-    )
-    const {edges: events} = data.allMarkdownRemark
-    const {state} = useContext(Context)
-    const {event} = state
-    const posts = events.filter(post => !post.node.frontmatter.events || (post.node.frontmatter.events.filter(ev => ev?.id === event.id).length))
+export default ({items}) => {
+    const posts = useInfo(items)
 
     const [activeKey, setActiveKey] = useState(null)
 
@@ -33,16 +15,16 @@ export default ({category}) => {
         <Accordion>
             <div className="row text-left">
                 <div className="col-md-6">
-                    {posts.filter(post => post.node.frontmatter.category === category).map((item, i) => (
+                    {posts.map((item, i) => (
                         i % 2 === 0 &&
-                        <Topic handleClick={setActiveKey} item={item.node} eventKey={`${i}`} active={`${i}` === activeKey}
+                        <Topic handleClick={setActiveKey} item={item} eventKey={`${i}`} active={`${i}` === activeKey}
                                key={i}/>
                     ))}
                 </div>
                 <div className="col-md-6">
-                    {posts.filter(post => post.node.frontmatter.category === category).map((item, i) => (
+                    {posts.map((item, i) => (
                         i % 2 !== 0 &&
-                        <Topic handleClick={setActiveKey} item={item.node} eventKey={`${i}`} active={`${i}` === activeKey}
+                        <Topic handleClick={setActiveKey} item={item} eventKey={`${i}`} active={`${i}` === activeKey}
                                key={i}/>
                     ))}
                 </div>
